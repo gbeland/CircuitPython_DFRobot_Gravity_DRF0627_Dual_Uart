@@ -2,29 +2,33 @@ Introduction
 ============
 
 
-.. image:: https://readthedocs.org/projects/circuitpython-sparkfun-qwiicquadsolidstaterelay/badge/?version=latest
-    :target: https://circuitpython-sparkfun-qwiicquadsolidstaterelay.readthedocs.io/
+.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+/badge/?version=latest
+    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+.readthedocs.io/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
     :alt: Discord
 
-.. image:: https://github.com/gbeland/CircuitPython_Sparkfun_QwiicQuadSolidStateRelay/workflows/Build%20CI/badge.svg
-    :target: https://github.com/gbeland/CircuitPython_Sparkfun_QwiicQuadSolidStateRelay/actions
+.. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+/workflows/Build%20CI/badge.svg
+    :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+/actions
     :alt: Build Status
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-CircuitPython library for SparkFun Qwiic Quad Solid State Relay Kit (COM-16833).
+CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
+.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627.jpg?imageView2/1/w/564/h/376
+    :target: https://www.dfrobot.com/product-2001.html
+    :alt: Gravity: I2C to Dual UART Module (SKU:DFR0627)
 
-.. image:: https://cdn.sparkfun.com//assets/parts/1/5/7/5/4/16833-SparkFun_Qwiic_Quad_Solid_State_Relay_Kit-12.jpg
-    :target: https://www.sparkfun.com/products/16833
-    :alt: SparkFun Qwiic Quad Solid State Relay Kit (COM-16833)
-
-`SparkFun Qwiic Quad Solid State Relay Kit (COM-16566) <https://www.sparkfun.com/products/16833>`_
+` Gravity: I2C to Dual UART Module (SKU:DFR0627) <https://www.dfrobot.com/product-2001.html>`_
+` Extra Wiki information <https://wiki.dfrobot.com/Gravity%3A%20IIC%20to%20Dual%20UART%20Module%20SKU%3A%20DFR0627>`_
 
 Dependencies
 =============
@@ -32,7 +36,7 @@ This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
 * `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
-* `SparkFun Qwiic Quad Solid State Relay Kit (COM-16566) Hardware <https://www.sparkfun.com/products/16833>`_
+* `DFROBOT Gravity: I2C to Dual UART Module Hardware <https://www.dfrobot.com/product-2001.html>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -46,18 +50,18 @@ Installing from PyPI
    as a standard element. Stay tuned for PyPI availability!
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/circuitpython-sparkfun-qwiicquadsolidstaterelay/>`_.
+PyPI <https://pypi.org/project/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/>`_.
 To install for current user:
 
 .. code-block:: shell
 
-    pip3 install circuitpython-sparkfun-qwiicquadsolidstaterelay
+    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install circuitpython-sparkfun-qwiicquadsolidstaterelay
+    sudo pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
 
 To install in a virtual environment in your current project:
 
@@ -66,7 +70,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install circuitpython-sparkfun-qwiicquadsolidstaterelay
+    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
 
 
 
@@ -85,7 +89,7 @@ following command to install:
 
 .. code-block:: shell
 
-    circup install sparkfun_qwiicquadsolidstaterelay
+    circup install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
 
 Or the following command to update an existing version:
 
@@ -125,7 +129,7 @@ Usage Example
 
 Documentation
 =============
-API documentation for this library can be found on `Read the Docs <https://circuitpython-sparkfun-qwiicquadsolidstaterelay.readthedocs.io/>`_.
+API documentation for this library can be found on `Read the Docs <https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/>`_.
 
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
@@ -134,5 +138,5 @@ Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/gbeland/CircuitPython_Sparkfun_QwiicQuadSolidStateRelay/blob/HEAD/CODE_OF_CONDUCT.md>`_
+<https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/blob/HEAD/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
