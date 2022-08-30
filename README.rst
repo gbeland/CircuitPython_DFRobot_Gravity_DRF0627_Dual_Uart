@@ -3,8 +3,7 @@ Introduction
 
 
 .. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
-    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
-.readthedocs.io/
+    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
@@ -20,7 +19,8 @@ Introduction
     :alt: Code Style: Black
 
 CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
-.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627.jpg?imageView2/1/w/564/h/376
+
+.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627.jpg
     :target: https://www.dfrobot.com/product-2001.html
     :alt: Gravity: I2C to Dual UART Module (SKU:DFR0627)
 
