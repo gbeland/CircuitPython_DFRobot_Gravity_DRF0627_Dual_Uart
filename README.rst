@@ -2,8 +2,7 @@ Introduction
 ============
 
 
-.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
-/badge/?version=latest
+.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
     :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
 .readthedocs.io/
     :alt: Documentation Status
@@ -12,10 +11,8 @@ Introduction
     :target: https://adafru.it/discord
     :alt: Discord
 
-.. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
-/workflows/Build%20CI/badge.svg
-    :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
-/actions
+.. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/workflows/Build%20CI/badge.svg
+    :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/actions
     :alt: Build Status
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
