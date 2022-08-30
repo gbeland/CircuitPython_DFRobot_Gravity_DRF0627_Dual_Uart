@@ -24,18 +24,18 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     # Community Bundle Information
-    name="circuitpython-sparkfun-qwiicquadsolidstaterelay",
+    name="CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart",
     use_scm_version={
         # This is needed for the PyPI version munging in the Github Actions release.yml
         "git_describe_command": "git describe --tags --long",
         "local_scheme": "no-local-version",
     },
     setup_requires=["setuptools_scm"],
-    description="CircuitPython library for the Sparkfun Quad Solid State Qwiic Relay",
+    description="CircuitPython library for the DF DFRobot_Gravity_DRF0627_I2C_Dual_Uart",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     # The project's main homepage.
-    url="https://github.com/gbeland/CircuitPython_Sparkfun_QwiicQuadSolidStateRelay.git",
+    url="https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.git",
     # Author details
     author="Graham Beland",
     author_email="gbeland@gmail.com",  # TODO: Add your email here
@@ -56,11 +56,11 @@ setup(
     ],
     # What does your project relate to?
     keywords="adafruit blinka circuitpython micropython sparkfun_qwiicquadsolidstaterelay "
-    "power i2c iot qwuuc original "
-    "sparkfun relay quad solid state qwiic stemma blinkaCircuit kit 16833 kit-16833",
+    "serial communications i2c iot original "
+    "uart rs232 rs485 qwiic stemma blinkaCircuit",
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
     #       CHANGE `py_modules=['...']` TO `packages=['...']`
-    py_modules=["sparkfun_qwiicquadsolidstaterelay"],
+    py_modules=["CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart"],
 )
