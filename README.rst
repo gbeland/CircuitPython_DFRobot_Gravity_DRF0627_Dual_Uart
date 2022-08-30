@@ -24,8 +24,8 @@ CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
     :target: https://www.dfrobot.com/product-2001.html
     :alt: Gravity: I2C to Dual UART Module (SKU:DFR0627)
 
-*`Gravity: I2C to Dual UART Module (SKU:DFR0627) <https://www.dfrobot.com/product-2001.html>`
-*`Extra Wiki information <https://wiki.dfrobot.com/Gravity%3A%20IIC%20to%20Dual%20UART%20Module%20SKU%3A%20DFR0627>`
+* `Gravity: I2C to Dual UART Module (SKU:DFR0627) <https://www.dfrobot.com/product-2001.html>`_
+* `Extra Wiki information <https://wiki.dfrobot.com/Gravity%3A%20IIC%20to%20Dual%20UART%20Module%20SKU%3A%20DFR0627>`_
 
 Dependencies
 =============
