@@ -561,8 +561,8 @@ class DFRobot_IIC_Serial:
         self._write_bytes(self.REG_WK2132_LCR, [lcr])
         return self._read_bytes(self.REG_WK2132_LCR, 1)
 
-    @classmethod
-    def _update_addr(self, pre, sub_uart_channel, obj):
+    @staticmethod
+    def _update_addr(pre, sub_uart_channel, obj):
         newaddr = pre & 0xF8
         newaddr |= obj & 0x01
         newaddr |= sub_uart_channel << 1
