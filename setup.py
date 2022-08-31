@@ -24,7 +24,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     # Community Bundle Information
-    name="CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart",
+    name="circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart",
     use_scm_version={
         # This is needed for the PyPI version munging in the Github Actions release.yml
         "git_describe_command": "git describe --tags --long",
@@ -62,5 +62,5 @@ setup(
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
     #       CHANGE `py_modules=['...']` TO `packages=['...']`
-    py_modules=["CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart"],
+    py_modules=["circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart"],
 )
