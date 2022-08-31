@@ -26,16 +26,16 @@ iic_uart2 = DualUart.DFRobot_IIC_Serial(
 try:
     iic_uart1.begin(9600, iic_uart1.IIC_Serial_8N1)
     print("Opened: UART 1 ")
-except Exception as e:
+except (Exception,):
     iic_uart1 = None
-    print("Error: Could not open UART 1 Exception: " + str(e))
+    print("Error: Could not open UART 1")
 
 try:
     iic_uart2.begin(9600, iic_uart2.IIC_Serial_8N1)
     print("Opened: UART 2")
-except Exception as e:
+except (Exception,):
     iic_uart2 = None
-    print("Error: Could not open UART 2 Exception: " + str(e))
+    print("Error: Could not open UART 2")
 
 sendID = 1
 sendDelayCount = 1
