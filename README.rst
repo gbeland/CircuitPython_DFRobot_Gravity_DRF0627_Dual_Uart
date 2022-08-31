@@ -1,7 +1,5 @@
 Introduction
 ============
-
-
 .. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
     :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/
     :alt: Documentation Status
@@ -20,7 +18,7 @@ Introduction
 
 CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
 
-.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627.jpg
+.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627-detail-004_564x376.jpg
     :target: https://www.dfrobot.com/product-2001.html
     :alt: Gravity: I2C to Dual UART Module (SKU:DFR0627)
 
@@ -120,6 +118,21 @@ Usage Example
     else:
         print("Relay does not appear to be connected. Please check wiring.")
 
+
+Additional connection information
+=================================
+The DRF0627 comes with a cable that allows for connection to the CircuitPython hardware using a 
+SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter Product ID: 4527 https://www.adafruit.com/product/4527
+
+Connection
+Black wire -> Stemma Ground
+Red wire -> Stemma 3.3 V
+Green wire -> Stemma SDA
+Blue wire -> Stemma SCA
+
+To test the connection the "t" and "R" pins can be connected together. If you tie the "T" and "R" pins between the same UART the data will echo back to you on the same port. If you tie the "T" and "R" pins from UART1 to UART 2 data will be send between the two ports.
+
+If RS485 is desired you can use a RS485 adapter such as the "HiLetgo 5pcs TTL to RS485 485 to Serial UART Level Reciprocal Hardware Automatic Flow Control UART to RS485 Converter RS485 to TTL" 
 
 Documentation
 =============
