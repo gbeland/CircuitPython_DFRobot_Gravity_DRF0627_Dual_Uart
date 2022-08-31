@@ -124,8 +124,8 @@ SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter Product ID: 4527 https://
 
 .. image:: https://user-images.githubusercontent.com/70548834/187724117-4660a9b5-e877-4bf8-8dbe-a0c5a8d7ca6e.jpg
     :width: 200
-    :target: https://www.sparkfun.com/products/15093
-    :alt: SparkFun Qwiic Single Relay (COM-15093)
+    :target: https://www.adafruit.com/product/4527
+    :alt: SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter
 
 Connection
 Black wire -> Stemma Ground
@@ -139,8 +139,8 @@ If RS485 is desired you can use a RS485 adapter such as the "HiLetgo 5pcs TTL to
 
 .. image:: https://user-images.githubusercontent.com/70548834/187724152-69504123-93cf-4ca5-9650-d5c197ea666d.jpg
     :width: 200
-    :target: https://www.sparkfun.com/products/15093
-    :alt: SparkFun Qwiic Single Relay (COM-15093)
+    :target: https://protosupplies.com/product/scm-ttl-to-rs-485-interface-module/
+    :alt: SCM TTL to RS-485 Interface Module
 
 Documentation
 =============
