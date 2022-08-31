@@ -4,7 +4,7 @@
 
 import time
 import board
-import CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart as DualUart
+import circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart as DualUart
 
 i2c = board.I2C()
 

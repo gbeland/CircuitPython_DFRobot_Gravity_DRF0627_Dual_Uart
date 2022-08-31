@@ -1,10 +1,10 @@
-# CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart: Copyright (c) 2022 Graham Beland
+# circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart: Copyright (c) 2022 Graham Beland
 #
 # SPDX-License-Identifier: MIT
 
 
 """
-`CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart`
+`circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart`
 ================================================================================
 CircuitPython library for SparkFun Qwiic Quad Solid State Relay Kit (COM-16833).
 * Author(s): Graham Beland, Sept. 2022
