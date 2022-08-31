@@ -1,5 +1,7 @@
 Introduction
 ============
+.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627-detail-004_564x376.jpg
+
 .. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
     :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/
     :alt: Documentation Status
