@@ -434,12 +434,12 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_tail = 0
 
         channel = self._sub_serial_channel_switch(self.SUBUART_CHANNEL_1)
-        lengthBytes = self._read_bytes(self.REG_WK2132_GENA, 1)
+        bytesIn = self._read_bytes(self.REG_WK2132_GENA, 1)
 
-        if len(lengthBytes) != 1:
+        if len(bytesIn) != 1:
             print("READ BYTE ERROR!")
             return self.ERR_READ
-        if lengthBytes[0] & 0x80 == 0:
+        if bytesIn[0] & 0x80 == 0:
             print("Read REG_WK2132_GENA  ERROR!")
             return self.ERR_REGDATA
         self._sub_serial_channel_switch(channel)
