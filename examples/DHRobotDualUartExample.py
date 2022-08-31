@@ -1,38 +1,38 @@
-# circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart: Copyright (c) 2022 Graham Beland
+# circuitpython_dfrobot_gravity_drf0627_dual_uart: Copyright (c) 2022 Graham Beland
 #
 # SPDX-License-Identifier: MIT
 
 import time
 import board
-import circuitpython_dfrobot_gravity_drf0627_i2c_dual_uart as DualUart
+import circuitpython_dfrobot_gravity_drf0627_dual_uart as DualUart
 
 i2c = board.I2C()
 
 
-iic_uart1 = DualUart.DFRobot_IIC_Serial(
+uart1 = DualUart.DFRobot_IIC_Serial(
     i2c,
     sub_uart_channel=DualUart.DFRobot_IIC_Serial.SUBUART_CHANNEL_1,
     IA1=1,
     IA0=1,
 )
 
-iic_uart2 = DualUart.DFRobot_IIC_Serial(
+uart2 = DualUart.DFRobot_IIC_Serial(
     i2c,
     sub_uart_channel=DualUart.DFRobot_IIC_Serial.SUBUART_CHANNEL_2,
     IA1=1,
     IA0=1,
 )
 
-iic_uart1 = None
+uart1 = None
 try:
-    iic_uart1.begin(9600, iic_uart1.IIC_Serial_8N1)
+    uart1.begin(9600, uart1.IIC_Serial_8N1)
     print("Opened: UART 1 ")
 except (Exception,):
     pass
 
-iic_uart2 = None
+uart2 = None
 try:
-    iic_uart2.begin(9600, iic_uart2.IIC_Serial_8N1)
+    uart2.begin(9600, uart2.IIC_Serial_8N1)
     print("Opened: UART 2")
 except (Exception,):
     pass
@@ -45,21 +45,21 @@ while True:
     sendDelayCount -= 1
     if sendDelayCount <= 0:
         sendDelayCount = 10
-        iic_uart1.write("From1:" + str(sendID))
-        iic_uart2.write("From2:" + str(sendID))
+        uart1.write("From1:" + str(sendID))
+        uart2.write("From2:" + str(sendID))
 
-    if iic_uart1 is not None:
-        if iic_uart1.available():
+    if uart1 is not None:
+        if uart1.available():
             s = ""
-            while iic_uart1.available():
-                b = iic_uart1.read(1)
+            while uart1.available():
+                b = uart1.read(1)
                 s += chr(b[0])
             print("<1:" + s + " len:" + str(len(s)) + ">")
 
-    if iic_uart2 is not None:
-        if iic_uart2.available():
+    if uart2 is not None:
+        if uart2.available():
             s = ""
-            while iic_uart2.available():
-                b = iic_uart2.read(1)
+            while uart2.available():
+                b = uart2.read(1)
                 s += chr(b[0])
             print("<2:" + s + " len:" + str(len(s)) + ">")
