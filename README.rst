@@ -1,7 +1,7 @@
 Introduction
 ============
-.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/badge/?version=latest
-    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart.readthedocs.io/
+.. image:: https://readthedocs.org/projects/circuitpython-dfrobot-gravity-drf0627-dual-uart/badge/?version=latest
+    :target: https://circuitpython-dfrobot-gravity-drf0627-dual-uart.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
