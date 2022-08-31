@@ -55,7 +55,7 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     # What does your project relate to?
-    keywords="adafruit blinka circuitpython micropython sparkfun_qwiicquadsolidstaterelay "
+    keywords="adafruit blinka circuitpython micropython rs232 uart serail rs485 "
     "serial communications i2c iot original "
     "uart rs232 rs485 qwiic stemma blinkaCircuit",
     # You can just specify the packages manually here if your project is
