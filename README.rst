@@ -60,7 +60,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python -m venv .env
     source .env/bin/activate
-    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
+    pip install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 
 
