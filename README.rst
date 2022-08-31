@@ -166,12 +166,12 @@ SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter Product ID: 4527 https://
 
 Connections:
 ************
+.. code-block::
 
-| Black wire -> Stemma Ground
-| Red wire -> Stemma 3.3 V
-| Green wire -> Stemma SDA
-| Blue wire -> Stemma SCA
-|
+    Black wire -> Stemma Ground
+    Red wire -> Stemma 3.3 V
+    Green wire -> Stemma SDA
+    Blue wire -> Stemma SCA
 
 To test the connection the "t" and "R" pins can be connected together. If you tie the "T" and "R" pins between the same UART the data will echo back to you on the same port. If you tie the "T" and "R" pins from UART1 to UART 2 data will be send between the two ports.
 
