@@ -23,14 +23,12 @@ uart2 = DualUart.DFRobot_IIC_Serial(
     IA0=1,
 )
 
-uart1 = None
 try:
     uart1.begin(9600, uart1.IIC_Serial_8N1)
     print("Opened: UART 1 ")
 finally:
     pass
 
-uart2 = None
 try:
     uart2.begin(9600, uart2.IIC_Serial_8N1)
     print("Opened: UART 2")
