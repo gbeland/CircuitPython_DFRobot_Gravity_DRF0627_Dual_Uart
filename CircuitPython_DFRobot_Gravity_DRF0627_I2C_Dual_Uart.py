@@ -282,12 +282,12 @@ class DFRobot_IIC_Serial:
         @n receive buffer(256B) and self-defined _rx_buffer(31B).
         @return Return the number of bytes in receive buffer
         """
-        theBs = self._read_bytes(self.REG_WK2132_RFCNT, 1)
+        thebs = self._read_bytes(self.REG_WK2132_RFCNT, 1)
         index = 0
-        if len(theBs) != 1:
+        if len(thebs) != 1:
             print("READ BYTE SIZE ERROR!")
             return 0
-        index = int(theBs[0])
+        index = int(thebs[0])
         if index == 0:
             fsr = self._read_fifo_state_reg()
             if (fsr & self.sFsrReg_rDat) > 0:
