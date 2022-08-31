@@ -29,7 +29,7 @@ Implementation Notes
  @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  @license     The MIT License (MIT)
  @author [Arya](xue.peng@dfrobot.com)
- @version  V1.0
+ @version  V1.1
  @date  2021-05-07
  @https://github.com/DFRobot/DFRobot_IIC_Serial
 """

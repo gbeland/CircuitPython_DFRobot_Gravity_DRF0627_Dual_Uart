@@ -156,7 +156,7 @@ Usage Example
 
 Additional connection information
 =================================
-The DRF0627 comes with a cable that allows for connection to the CircuitPython hardware using a 
+The DRF0627 comes with a cable that allows for connection to the CircuitPython hardware using a
 SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter Product ID: 4527 https://www.adafruit.com/product/4527
 
 .. image:: https://user-images.githubusercontent.com/70548834/187724117-4660a9b5-e877-4bf8-8dbe-a0c5a8d7ca6e.jpg
@@ -175,7 +175,7 @@ Connections:
 
 To test the connection the "t" and "R" pins can be connected together. If you tie the "T" and "R" pins between the same UART the data will echo back to you on the same port. If you tie the "T" and "R" pins from UART1 to UART 2 data will be send between the two ports.
 
-If RS485 is desired you can use a RS485 adapter such as the "SCM TTL to RS-485 Interface Module" 
+If RS485 is desired you can use a RS485 adapter such as the "SCM TTL to RS-485 Interface Module"
 
 .. image:: https://user-images.githubusercontent.com/70548834/187728623-31a28fc7-3a15-42c7-ad91-6f9be4e81756.jpg
     :width: 400
