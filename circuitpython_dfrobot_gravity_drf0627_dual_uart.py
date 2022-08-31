@@ -44,8 +44,10 @@ __repo__ = (
 import time
 import array as arr
 
+
 class DFRobot_IIC_Serial:
     """DFRobot_IIC_Serial"""
+
     # Global control register, control sub UART clock
     REG_WK2132_GENA = 0x00
     # Global sub UART reset register, reset a sub UART independently through software
@@ -381,7 +383,7 @@ class DFRobot_IIC_Serial:
             databyte = bytes(value, "ascii")
         elif isinstance(value, int):
             # print("int detected")
-            databyte = arr.array('b', bytearray([value % 0xFF]))
+            databyte = arr.array("b", bytearray([value % 0xFF]))
         else:
             databyte = value
 
