@@ -27,14 +27,14 @@ uart1 = None
 try:
     uart1.begin(9600, uart1.IIC_Serial_8N1)
     print("Opened: UART 1 ")
-except (Exception,):
+finally:
     pass
 
 uart2 = None
 try:
     uart2.begin(9600, uart2.IIC_Serial_8N1)
     print("Opened: UART 2")
-except (Exception,):
+finally:
     pass
 
 sendID = 1
