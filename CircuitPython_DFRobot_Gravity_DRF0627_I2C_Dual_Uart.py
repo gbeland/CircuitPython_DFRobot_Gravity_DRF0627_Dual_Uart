@@ -234,7 +234,7 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_tail = 0
         self._i2c = i2c
 
-    def begin(self, baud, serialFormat=IIC_Serial_8N1):
+    def begin(self, baud, FORMAT=IIC_Serial_8N1):
         """!
         @brief Init function, set sub UART band rate, data format
         @param baud: baud rate, it support: 9600, 57600, 115200, 2400, 4800, 7200,
@@ -245,7 +245,7 @@ class DFRobot_IIC_Serial:
         @n     IIC_SERIAL_8F1, IIC_SERIAL_8F2
         @return Return 0 if it sucess, otherwise return non-zero
         """
-        return self._begin(baud, serialFormat, self.eNormalMode, self.eNormal)
+        return self._begin(baud, FORMAT, self.eNormalMode, self.eNormal)
 
     def end(self):
         """!
@@ -282,12 +282,12 @@ class DFRobot_IIC_Serial:
         @n receive buffer(256B) and self-defined _rx_buffer(31B).
         @return Return the number of bytes in receive buffer
         """
-        lengthBytes = self._read_bytes(self.REG_WK2132_RFCNT, 1)
+        B = self._read_bytes(self.REG_WK2132_RFCNT, 1)
         index = 0
-        if len(lengthBytes) != 1:
+        if len(B) != 1:
             print("READ BYTE SIZE ERROR!")
             return 0
-        index = int(lengthBytes[0])
+        index = int(B[0])
         if index == 0:
             fsr = self._read_fifo_state_reg()
             if (fsr & self.sFsrReg_rDat) > 0:
@@ -311,8 +311,8 @@ class DFRobot_IIC_Serial:
         while i < num:
             j = (self._rx_buffer_head + 1) % self.SERIAL_RX_BUFFER_SIZE
             if j != self._rx_buffer_tail:
-                lb = self._read_bytes(self.REG_WK2132_FDAT, 1)
-                self._rx_buffer[self._rx_buffer_head] = lb[0]
+                B = self._read_bytes(self.REG_WK2132_FDAT, 1)
+                self._rx_buffer[self._rx_buffer_head] = B[0]
                 self._rx_buffer_head = j
                 i += 1
             else:
@@ -346,10 +346,10 @@ class DFRobot_IIC_Serial:
                 ) % self.SERIAL_RX_BUFFER_SIZE
                 k += 1
             if i < num and j != self._rx_buffer_tail:
-                lb = self._read_bytes(self.REG_WK2132_FDAT, 1)
-                if len(lb) != 1:
+                B = self._read_bytes(self.REG_WK2132_FDAT, 1)
+                if len(B) != 1:
                     return -1
-                self._rx_buffer[self._rx_buffer_head] = lb[0]
+                self._rx_buffer[self._rx_buffer_head] = B[0]
                 self._rx_buffer_head = j
                 i += 1
             if k >= size and j != self._rx_buffer_tail:
