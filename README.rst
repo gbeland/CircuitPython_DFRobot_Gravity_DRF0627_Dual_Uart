@@ -1,5 +1,9 @@
 Introduction
 ============
+![DRF0627](https://user-images.githubusercontent.com/70548834/187724082-bbbdea34-60d7-4014-963c-f721ea7050a6.jpg)
+![Breakout](https://user-images.githubusercontent.com/70548834/187724117-4660a9b5-e877-4bf8-8dbe-a0c5a8d7ca6e.jpg)
+![HiLetgo](https://user-images.githubusercontent.com/70548834/187724152-69504123-93cf-4ca5-9650-d5c197ea666d.jpg)
+
 .. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627-detail-004_564x376.jpg
 
 .. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
