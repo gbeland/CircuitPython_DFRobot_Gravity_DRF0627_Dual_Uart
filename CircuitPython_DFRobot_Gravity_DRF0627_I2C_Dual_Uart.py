@@ -1,4 +1,24 @@
-"""!
+# CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart: Copyright (c) 2022 Graham Beland
+#
+# SPDX-License-Identifier: MIT
+
+
+"""
+`CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart`
+================================================================================
+CircuitPython library for SparkFun Qwiic Quad Solid State Relay Kit (COM-16833).
+* Author(s): Graham Beland, Sept. 2022
+Implementation Notes
+--------------------
+**Hardware:**
+**Software and Dependencies:**
+* Adafruit CircuitPython <https://github.com/adafruit/circuitpython>
+* Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>
+* Adafruit CircuitPython firmware for the supported boards:
+* https://circuitpython.org/downloads
+* Adafruit's Bus Device library:
+* https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
+
  @file DFRobot_IIC_Serial.py
  @brief Define the basic structure of class DFRobot_IIC_Serial
  @n This is a library for IIC to UART module, the maximum rate is 1Mbps
@@ -15,6 +35,14 @@
  @date  2021-05-07
  @https://github.com/DFRobot/DFRobot_IIC_Serial
 """
+# imports
+
+__version__ = "0.0.0-auto.0"
+__repo__ = (
+    "https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.git"
+)
+
+
 import time
 import array as arr
 
