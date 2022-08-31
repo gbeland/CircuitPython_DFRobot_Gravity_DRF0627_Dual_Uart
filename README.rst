@@ -58,7 +58,7 @@ To install in a virtual environment in your current project:
 .. code-block:: shell
 
     mkdir project-name && cd project-name
-    python3 -m venv .env
+    python -m venv .env
     source .env/bin/activate
     pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
@@ -72,7 +72,7 @@ Install it with the following command if necessary:
 
 .. code-block:: shell
 
-    pip3 install circup
+    pip install circup
 
 With ``circup`` installed and your CircuitPython device connected use the
 following command to install:
