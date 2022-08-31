@@ -1,11 +1,11 @@
-# circuitpython_dfrobot_gravity_drf0627_dual_uart: Copyright (c) 2022 Graham Beland
+# circuitpython_dfrobot_gravity_drf0627_dual_uart: Copyright (c) 2022 Graham N Beland
 #
 # SPDX-License-Identifier: MIT
 
 """
-`circuitpython_dfrobot_gravity_drf0627_dual_uart`
+circuitpython_dfrobot_gravity_drf0627_dual_uart
 ================================================================================
-* Author(s): Graham Beland, Sept. 2022
+Author(s): Graham Beland, Sept. 2022
 Implementation Notes
 --------------------
 **Hardware:**
