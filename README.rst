@@ -45,21 +45,20 @@ To install for current user:
 
 .. code-block:: shell
 
-    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
+    pip install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
+    sudo pip install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 To install in a virtual environment in your current project:
 
 .. code-block:: shell
 
-    mkdir project-name && cd project-name
-    python -m venv .env
-    source .env/bin/activate
+    python -m venv TestEnviromentDirectory (Name it whatever you want)
+    cd TestEnviromentDirectory
     pip install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 
