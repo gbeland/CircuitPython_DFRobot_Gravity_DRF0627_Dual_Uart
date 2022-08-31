@@ -1,32 +1,22 @@
-![DRF0627](https://user-images.githubusercontent.com/70548834/187724082-bbbdea34-60d7-4014-963c-f721ea7050a6.jpg)
-![Breakout](https://user-images.githubusercontent.com/70548834/187724117-4660a9b5-e877-4bf8-8dbe-a0c5a8d7ca6e.jpg)
-![HiLetgo](https://user-images.githubusercontent.com/70548834/187724152-69504123-93cf-4ca5-9650-d5c197ea666d.jpg)
-
-
 Introduction
 ============
-
-.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627-detail-004_564x376.jpg
-
 .. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
     :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/
     :alt: Documentation Status
-
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
     :alt: Discord
-
 .. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/workflows/Build%20CI/badge.svg
     :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/actions
     :alt: Build Status
-
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
 CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
 
-.. image:: https://dfimg.dfrobot.com/store/data/DFR0627/DFR0627-detail-004_564x376.jpg
+.. image:: https://user-images.githubusercontent.com/70548834/187725830-5e979aee-c291-4bbb-9eaa-9b412f353efd.jpg
+    :width: 400
     :target: https://www.dfrobot.com/product-2001.html
     :alt: Gravity: I2C to Dual UART Module (SKU:DFR0627)
 
@@ -132,6 +122,11 @@ Additional connection information
 The DRF0627 comes with a cable that allows for connection to the CircuitPython hardware using a 
 SparkFun STEMMA QT / Qwiic Breadboard Breakout Adapter Product ID: 4527 https://www.adafruit.com/product/4527
 
+.. image:: https://user-images.githubusercontent.com/70548834/187724117-4660a9b5-e877-4bf8-8dbe-a0c5a8d7ca6e.jpg
+    :width: 200
+    :target: https://www.sparkfun.com/products/15093
+    :alt: SparkFun Qwiic Single Relay (COM-15093)
+
 Connection
 Black wire -> Stemma Ground
 Red wire -> Stemma 3.3 V
@@ -141,6 +136,11 @@ Blue wire -> Stemma SCA
 To test the connection the "t" and "R" pins can be connected together. If you tie the "T" and "R" pins between the same UART the data will echo back to you on the same port. If you tie the "T" and "R" pins from UART1 to UART 2 data will be send between the two ports.
 
 If RS485 is desired you can use a RS485 adapter such as the "HiLetgo 5pcs TTL to RS485 485 to Serial UART Level Reciprocal Hardware Automatic Flow Control UART to RS485 Converter RS485 to TTL" 
+
+.. image:: https://user-images.githubusercontent.com/70548834/187724152-69504123-93cf-4ca5-9650-d5c197ea666d.jpg
+    :width: 200
+    :target: https://www.sparkfun.com/products/15093
+    :alt: SparkFun Qwiic Single Relay (COM-15093)
 
 Documentation
 =============
