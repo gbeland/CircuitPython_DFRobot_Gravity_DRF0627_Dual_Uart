@@ -234,7 +234,7 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_tail = 0
         self._i2c = i2c
 
-    def begin(self, baud, theFormat=IIC_Serial_8N1):
+    def begin(self, baud, theformat=IIC_Serial_8N1):
         """!
         @brief Init function, set sub UART band rate, data format
         @param baud: baud rate, it support: 9600, 57600, 115200, 2400, 4800, 7200,
@@ -245,7 +245,7 @@ class DFRobot_IIC_Serial:
         @n     IIC_SERIAL_8F1, IIC_SERIAL_8F2
         @return Return 0 if it sucess, otherwise return non-zero
         """
-        return self._begin(baud, theFormat, self.eNormalMode, self.eNormal)
+        return self._begin(baud, theformat, self.eNormalMode, self.eNormal)
 
     def end(self):
         """!
@@ -389,9 +389,9 @@ class DFRobot_IIC_Serial:
 
         tx_len = length = len(databyte)
         n = 0
-        writeOk = False
+        writeok = False
         while tx_len > 0:
-            writeOk = False
+            writeok = False
             try:
                 fsr = self._read_fifo_state_reg()
                 if fsr & self.sFsrReg_tFull > 0:
@@ -400,10 +400,10 @@ class DFRobot_IIC_Serial:
                 self._write_bytes(self.REG_WK2132_FDAT, [databyte[n] & 0xFF])
                 n += 1
                 tx_len -= 1
-                writeOk = True
+                writeok = True
             finally:
                 pass
-        if writeOk is True:
+        if writeok is True:
             return length - len(databyte[n:])
 
         return 0
@@ -474,12 +474,13 @@ class DFRobot_IIC_Serial:
             bytesin[0] |= 0x01
         self._write_bytes(self.REG_WK2132_SPAGE, bytesin)
         bytesin = self._read_bytes(self.REG_WK2132_SPAGE, 1)
+        return page
 
-    def _sub_serial_global_reg_enable(self, sub_uart_channel, type):
+    def _sub_serial_global_reg_enable(self, sub_uart_channel, thetype):
         if sub_uart_channel > self.SUBUART_CHANNEL_ALL:
             print("SUBSERIAL CHANNEL NUMBER ERROR!")
             return None
-        reg_addr = self._get_global_reg_type(type)
+        reg_addr = self._get_global_reg_type(thetype)
         channel = self._sub_serial_channel_switch(self.SUBUART_CHANNEL_1)
         bytesin = self._read_bytes(reg_addr, 1)
         if len(bytesin) != 1:
@@ -494,15 +495,16 @@ class DFRobot_IIC_Serial:
         self._write_bytes(reg_addr, bytesin)
         bytesin = self._read_bytes(reg_addr, 1)
         self._sub_serial_channel_switch(channel)
+        return channel
 
-    def _get_global_reg_type(self, type):
-        if type < 0 or type > 2:
+    def _get_global_reg_type(self, thetype):
+        if thetype < 0 or thetype > 2:
             print("Global Reg Type Error!")
             return 0
         reg_addr = 0
-        if type == 0:
+        if thetype == 0:
             reg_addr = self.REG_WK2132_GENA
-        elif type == 1:
+        elif thetype == 1:
             reg_addr = self.REG_WK2132_GRST
         else:
             reg_addr = self.REG_WK2132_GIER
@@ -515,6 +517,7 @@ class DFRobot_IIC_Serial:
         bytesin[0] = bytesin[0] | val
         self._write_bytes(reg, bytesin)
         bytesin = self._read_bytes(reg, 1)
+        return len(bytesin)
 
     def _sub_serial_channel_switch(self, sub_uart_channel):
         channel = self._sub_serial_channel
@@ -545,7 +548,7 @@ class DFRobot_IIC_Serial:
         self._sub_serial_page_switch(0)
         self._sub_serial_reg_config(self.REG_WK2132_SCR, scr[0])
 
-    def _set_sub_serial_config_reg(self, format, mode, opt):
+    def _set_sub_serial_config_reg(self, theformat, mode, opt):
         self._addr = self._update_addr(
             self._addr, self._sub_serial_channel, self.OBJECT_REGISTER
         )
@@ -554,7 +557,7 @@ class DFRobot_IIC_Serial:
             print("READ BYTE ERROR!")
             return None
         lcr = bytesin[0] & 0xC0
-        lcr |= format
+        lcr |= theformat
         lcr |= mode << 4
         lcr |= opt << 5
         self._write_bytes(self.REG_WK2132_LCR, [lcr])
@@ -588,8 +591,7 @@ class DFRobot_IIC_Serial:
 
         if self.last_operate_status == self.STA_OK:
             return len(buf)
-        else:
-            return 0
+        return 0
 
     def _read_bytes(self, reg, len1):
         """!
@@ -615,5 +617,4 @@ class DFRobot_IIC_Serial:
 
         if self.last_operate_status == self.STA_OK:
             return list(buffer)
-        else:
-            return []
+        return []
