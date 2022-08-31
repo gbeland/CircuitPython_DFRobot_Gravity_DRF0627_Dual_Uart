@@ -47,6 +47,7 @@ import time
 import array as arr
 
 class DFRobot_IIC_Serial:
+    """DFRobot_IIC_Serial"""
     # Global control register, control sub UART clock
     REG_WK2132_GENA = 0x00
     # Global sub UART reset register, reset a sub UART independently through software
@@ -233,7 +234,7 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_tail = 0
         self._i2c = i2c
 
-    def begin(self, baud, format=IIC_Serial_8N1):
+    def begin(self, baud, serialFormat=IIC_Serial_8N1):
         """!
         @brief Init function, set sub UART band rate, data format
         @param baud: baud rate, it support: 9600, 57600, 115200, 2400, 4800, 7200,
@@ -244,7 +245,7 @@ class DFRobot_IIC_Serial:
         @n     IIC_SERIAL_8F1, IIC_SERIAL_8F2
         @return Return 0 if it sucess, otherwise return non-zero
         """
-        return self._begin(baud, format, self.eNormalMode, self.eNormal)
+        return self._begin(baud, serialFormat, self.eNormalMode, self.eNormal)
 
     def end(self):
         """!
@@ -281,12 +282,12 @@ class DFRobot_IIC_Serial:
         @n receive buffer(256B) and self-defined _rx_buffer(31B).
         @return Return the number of bytes in receive buffer
         """
-        lb = self._read_bytes(self.REG_WK2132_RFCNT, 1)
+        lengthBytes = self._read_bytes(self.REG_WK2132_RFCNT, 1)
         index = 0
-        if len(lb) != 1:
+        if len(lengthBytes) != 1:
             print("READ BYTE SIZE ERROR!")
             return 0
-        index = int(lb[0])
+        index = int(lengthBytes[0])
         if index == 0:
             fsr = self._read_fifo_state_reg()
             if (fsr & self.sFsrReg_rDat) > 0:
@@ -377,14 +378,14 @@ class DFRobot_IIC_Serial:
         # convertOk = False
         if isinstance(value, str):
             # print("string detected")
-            d = bytes(value, "ascii")
+            dataByte = bytes(value, "ascii")
         elif isinstance(value, int):
             # print("int detected")
-            d = arr.array('b', bytearray([value % 0xFF]))
+            dataByte = arr.array('b', bytearray([value % 0xFF]))
         else:
-            d = value
+            dataByte = value
 
-        tx_len = length = len(d)
+        tx_len = length = len(dataByte)
         n = 0
         writeOk = False
         while tx_len > 0:
@@ -393,24 +394,24 @@ class DFRobot_IIC_Serial:
                 fsr = self._read_fifo_state_reg()
                 if fsr & self.sFsrReg_tFull > 0:
                     print("FIFO full")
-                    return length - len(d[n:])
-                self._write_bytes(self.REG_WK2132_FDAT, [d[n] & 0xFF])
+                    return length - len(dataByte[n:])
+                self._write_bytes(self.REG_WK2132_FDAT, [dataByte[n] & 0xFF])
                 n += 1
                 tx_len -= 1
                 writeOk = True
             finally:
                 pass
         if writeOk is True:
-            return length - len(d[n:])
+            return length - len(dataByte[n:])
 
         return 0
 
     def _read_fifo_state_reg(self):
-        lb = self._read_bytes(self.REG_WK2132_FSR, 1)
-        if len(lb) != 1:
+        lengthBytes = self._read_bytes(self.REG_WK2132_FSR, 1)
+        if len(lengthBytes) != 1:
             return 0
         else:
-            return lb[0]
+            return lengthBytes[0]
 
     def _begin(self, baud, format, mode, opt):
         """!
@@ -433,12 +434,12 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_tail = 0
 
         channel = self._sub_serial_channel_switch(self.SUBUART_CHANNEL_1)
-        lb = self._read_bytes(self.REG_WK2132_GENA, 1)
+        lengthBytes = self._read_bytes(self.REG_WK2132_GENA, 1)
 
-        if len(lb) != 1:
+        if len(lengthBytes) != 1:
             print("READ BYTE ERROR!")
             return self.ERR_READ
-        if lb[0] & 0x80 == 0:
+        if lengthBytes[0] & 0x80 == 0:
             print("Read REG_WK2132_GENA  ERROR!")
             return self.ERR_REGDATA
         self._sub_serial_channel_switch(channel)
@@ -462,16 +463,16 @@ class DFRobot_IIC_Serial:
     def _sub_serial_page_switch(self, page):
         if page > 1:
             return None
-        lb = self._read_bytes(self.REG_WK2132_SPAGE, 1)
-        if len(lb) != 1:
+        bytesIn = self._read_bytes(self.REG_WK2132_SPAGE, 1)
+        if len(bytesIn) != 1:
             print("READ BYTE ERROR!")
             return None
         if page == 0:
-            lb[0] &= 0xFE
+            bytesIn[0] &= 0xFE
         elif page == 1:
-            lb[0] |= 0x01
-        self._write_bytes(self.REG_WK2132_SPAGE, lb)
-        lb = self._read_bytes(self.REG_WK2132_SPAGE, 1)
+            bytesIn[0] |= 0x01
+        self._write_bytes(self.REG_WK2132_SPAGE, bytesIn)
+        bytesIn = self._read_bytes(self.REG_WK2132_SPAGE, 1)
 
     def _sub_serial_global_reg_enable(self, sub_uart_channel, type):
         if sub_uart_channel > self.SUBUART_CHANNEL_ALL:
@@ -479,18 +480,18 @@ class DFRobot_IIC_Serial:
             return None
         reg_addr = self._get_global_reg_type(type)
         channel = self._sub_serial_channel_switch(self.SUBUART_CHANNEL_1)
-        lb = self._read_bytes(reg_addr, 1)
-        if len(lb) != 1:
+        bytesIn = self._read_bytes(reg_addr, 1)
+        if len(bytesIn) != 1:
             print("READ BYTE SIZE ERROR!")
             return None
         if sub_uart_channel == self.SUBUART_CHANNEL_1:
-            lb[0] |= 0x01
+            bytesIn[0] |= 0x01
         elif sub_uart_channel == self.SUBUART_CHANNEL_2:
-            lb[0] |= 0x02
+            bytesIn[0] |= 0x02
         else:
-            lb[0] |= 0x03
-        self._write_bytes(reg_addr, lb)
-        lb = self._read_bytes(reg_addr, 1)
+            bytesIn[0] |= 0x03
+        self._write_bytes(reg_addr, bytesIn)
+        bytesIn = self._read_bytes(reg_addr, 1)
         self._sub_serial_channel_switch(channel)
 
     def _get_global_reg_type(self, type):
@@ -507,12 +508,12 @@ class DFRobot_IIC_Serial:
         return reg_addr
 
     def _sub_serial_reg_config(self, reg, val):
-        lb = self._read_bytes(reg, 1)
-        if len(lb) != 1:
+        bytesIn = self._read_bytes(reg, 1)
+        if len(bytesIn) != 1:
             return None
-        lb[0] = lb[0] | val
-        self._write_bytes(reg, lb)
-        lb = self._read_bytes(reg, 1)
+        bytesIn[0] = bytesIn[0] | val
+        self._write_bytes(reg, bytesIn)
+        bytesIn = self._read_bytes(reg, 1)
 
     def _sub_serial_channel_switch(self, sub_uart_channel):
         channel = self._sub_serial_channel

@@ -1,3 +1,7 @@
+# CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart: Copyright (c) 2022 Graham Beland
+#
+# SPDX-License-Identifier: MIT
+
 import time
 import board
 import CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart as DualUart
@@ -20,14 +24,14 @@ iic_uart2 = DualUart.DFRobot_IIC_Serial(
 )
 
 try:
-    iic_uart1.begin(baud=9600, format=iic_uart1.IIC_Serial_8N1)
+    iic_uart1.begin(baud=9600, serialFormat=iic_uart1.IIC_Serial_8N1)
     print("Opened: UART 1 ")
 except Exception as e:
     iic_uart1 = None
     print("Error: Could not open UART 1 Exception: " + str(e))
 
 try:
-    iic_uart2.begin(baud=9600, format=iic_uart2.IIC_Serial_8N1)
+    iic_uart2.begin(baud=9600, serialFormat=iic_uart2.IIC_Serial_8N1)
     print("Opened: UART 2")
 except Exception as e:
     iic_uart2 = None
