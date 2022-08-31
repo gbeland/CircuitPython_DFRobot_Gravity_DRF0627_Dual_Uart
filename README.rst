@@ -184,7 +184,7 @@ If RS485 is desired you can use a RS485 adapter such as the "SCM TTL to RS-485 I
 
 Documentation
 =============
-API documentation for this library can be found on `Read the Docs <https://CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart.readthedocs.io/>`_.
+API documentation for this library can be found on `Read the Docs <https://pypi.org/project/circuitpython-dfrobot-gravity-drf0627-dual-uart//>`_.
 
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
