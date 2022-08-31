@@ -138,7 +138,7 @@ To test the connection the "t" and "R" pins can be connected together. If you ti
 If RS485 is desired you can use a RS485 adapter such as the "HiLetgo 5pcs TTL to RS485 485 to Serial UART Level Reciprocal Hardware Automatic Flow Control UART to RS485 Converter RS485 to TTL" 
 
 .. image:: https://user-images.githubusercontent.com/70548834/187728623-31a28fc7-3a15-42c7-ad91-6f9be4e81756.jpg
-    :width: 200
+    :width: 400
     :target: https://protosupplies.com/product/scm-ttl-to-rs-485-interface-module/
     :alt: SCM TTL to RS-485 Interface Module
 
