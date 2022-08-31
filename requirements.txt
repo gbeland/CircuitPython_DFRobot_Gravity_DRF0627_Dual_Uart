@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2022 Graham Beland
+# SPDX-FileCopyrightText: Copyright (c) 2022 Graham N Beland
 #
 # SPDX-License-Identifier: MIT
 
