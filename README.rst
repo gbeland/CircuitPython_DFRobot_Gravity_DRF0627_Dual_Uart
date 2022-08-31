@@ -1,13 +1,13 @@
 Introduction
 ============
-.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/badge/?version=latest
-    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/
+.. image:: https://readthedocs.org/projects/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/badge/?version=latest
+    :target: https://CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart.readthedocs.io/
     :alt: Documentation Status
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
     :alt: Discord
-.. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/workflows/Build%20CI/badge.svg
-    :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/actions
+.. image:: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/workflows/Build%20CI/badge.svg
+    :target: https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/actions
     :alt: Build Status
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
@@ -40,18 +40,18 @@ or individual libraries can be installed using
 Installing from PyPI
 =====================
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/>`_.
+PyPI <https://pypi.org/project/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/>`_.
 To install for current user:
 
 .. code-block:: shell
 
-    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+    sudo pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 To install in a virtual environment in your current project:
 
@@ -60,7 +60,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+    pip3 install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 
 
@@ -79,7 +79,7 @@ following command to install:
 
 .. code-block:: shell
 
-    circup install CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart
+    circup install CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart
 
 Or the following command to update an existing version:
 
@@ -93,7 +93,7 @@ Usage Example
 
     import time
     import board
-    import CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart as DualUart
+    import CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart as DualUart
 
     i2c = board.I2C()
 
@@ -184,7 +184,7 @@ If RS485 is desired you can use a RS485 adapter such as the "SCM TTL to RS-485 I
 
 Documentation
 =============
-API documentation for this library can be found on `Read the Docs <https://CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.readthedocs.io/>`_.
+API documentation for this library can be found on `Read the Docs <https://CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart.readthedocs.io/>`_.
 
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
@@ -193,5 +193,5 @@ Contributing
 ============
 
 Contributions are welcome! Please read our `Code of Conduct
-<https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart/blob/HEAD/CODE_OF_CONDUCT.md>`_
+<https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/blob/HEAD/CODE_OF_CONDUCT.md>`_
 before contributing to help this project stay welcoming.
