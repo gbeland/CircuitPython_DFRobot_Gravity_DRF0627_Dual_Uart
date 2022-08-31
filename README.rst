@@ -90,31 +90,67 @@ Or the following command to update an existing version:
 Usage Example
 =============
 .. code-block::
+import time
+import board
+import CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart as DualUart
 
-    """ QuadRelayTest """
-    # QuadRelayTest: Copyright (c) 2022 Graham Beland
-    #
-    # SPDX-License-Identifier: MIT
-    # import the CircuitPython board and busio libraries
-    import time as tm
-    # CircuitPython board
-    import board
-    # the sparkfun_qwiicquadsolidstaterelay
-    import sparkfun_qwiicquadsolidstaterelay
+i2c = board.I2C()
 
-    # Create bus object using the board's I2C port
-    i2c = board.I2C()
 
-    # Note: default i2c address is 8
-    theRelay = sparkfun_qwiicquadsolidstaterelay.Sparkfun_QwiicQuadSolidStateRelay(i2c)
-    print("Opened: Relay Controller")
-    if theRelay.connected:
-        print("Relay connected. ")
-        theRelay.relay_on(1)
-        tm.sleep(1)
-        theRelay.relay_off(1)
-    else:
-        print("Relay does not appear to be connected. Please check wiring.")
+iic_uart1 = DualUart.DFRobot_IIC_Serial(
+    i2c,
+    sub_uart_channel=DualUart.DFRobot_IIC_Serial.SUBUART_CHANNEL_1,
+    IA1=1,
+    IA0=1,
+)
+
+iic_uart2 = DualUart.DFRobot_IIC_Serial(
+    i2c,
+    sub_uart_channel=DualUart.DFRobot_IIC_Serial.SUBUART_CHANNEL_2,
+    IA1=1,
+    IA0=1,
+)
+
+try:
+    iic_uart1.begin(baud=9600, format=iic_uart1.IIC_Serial_8N1)
+    print("Opened: UART 1 ")
+except Exception as e:
+    iic_uart1 = None
+    print("Error: Could not open UART 1 Exception: " + str(e))
+
+try:
+    iic_uart2.begin(baud=9600, format=iic_uart2.IIC_Serial_8N1)
+    print("Opened: UART 2")
+except Exception as e:
+    iic_uart2 = None
+    print("Error: Could not open UART 2 Exception: " + str(e))
+
+sendID = 1
+sendDelayCount = 1
+
+while True:
+    time.sleep(.3)
+    sendDelayCount -= 1
+    if sendDelayCount <= 0:
+        sendDelayCount = 10
+        iic_uart1.write("From1:" + str(sendID))
+        iic_uart2.write("From2:" + str(sendID))
+
+    if iic_uart1 is not None:
+        if iic_uart1.available():
+            s = ""
+            while iic_uart1.available():
+                b = iic_uart1.read(1)
+                s += chr(b[0])
+            print("<1:" + s + " len:" + str(len(s)) + ">")
+
+    if iic_uart2 is not None:
+        if iic_uart2.available():
+            s = ""
+            while iic_uart2.available():
+                b = (iic_uart2.read(1))
+                s += chr(b[0])
+            print("<2:" + s + " len:" + str(len(s)) + ">")
 
 
 Additional connection information
