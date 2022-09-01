@@ -22,6 +22,9 @@
 # .gitignore_global file:
 # git config --global core.excludesfile path/to/your/.gitignore_global
 
+# My dev test files
+LocalTest.py
+
 # CircuitPython-specific files
 *.mpy
 

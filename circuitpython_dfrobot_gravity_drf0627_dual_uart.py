@@ -233,6 +233,7 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_head = 0
         self._rx_buffer_tail = 0
         self._i2c = i2c
+        print("init")
 
     def begin(self, baud, theformat=IIC_Serial_8N1):
         """!
