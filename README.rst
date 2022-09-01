@@ -180,8 +180,20 @@ If RS485 is desired you can use a RS485 adapter such as the "SCM TTL to RS-485 I
     :target: https://protosupplies.com/product/scm-ttl-to-rs-485-interface-module/
     :alt: SCM TTL to RS-485 Interface Module
 
-Documentation
-=============
+IC2 Addressing:
+***************
+There are two address dip switches A1 and A0. The standard (factory setting is both switched to "ON")
+
+.. code-block::
+
+    A1 = ON,   A0 = ON  : Address 0x70-0x77
+    A1 = ON,   A0 = OFF : Address 0x50-0x57
+    A1 = OFF,  A0 = ON  : Address 0x30-0x37
+    A1 = OFF,  A0 = OFF : Address 0x10-0x17
+
+
+Additional Documentation
+========================
 API documentation for this library can be found on `Read the Docs <https://pypi.org/project/circuitpython-dfrobot-gravity-drf0627-dual-uart/>`_.
 
 For information on building library documentation, please check out
