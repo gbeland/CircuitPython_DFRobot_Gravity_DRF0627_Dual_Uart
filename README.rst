@@ -185,6 +185,12 @@ API documentation for this library can be found on `Read the Docs <https://pypi.
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
 
+For information on chip used on this board, please check out (original)
+`WK2132_DS_CN_V011_2017_5_.pdf <https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/files/9471826/WK2132_DS_CN_V011_2017_5_.pdf>`_.
+
+`WK2132_English.pdf <https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_Dual_Uart/files/9471834/WK2132_English.pdf>`_.
+
+
 Contributing
 ============
 
