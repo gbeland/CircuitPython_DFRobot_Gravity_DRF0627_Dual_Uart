@@ -40,7 +40,6 @@ __repo__ = (
     "https://github.com/gbeland/CircuitPython_DFRobot_Gravity_DRF0627_I2C_Dual_Uart.git"
 )
 
-
 import time
 import array as arr
 
@@ -233,7 +232,6 @@ class DFRobot_IIC_Serial:
         self._rx_buffer_head = 0
         self._rx_buffer_tail = 0
         self._i2c = i2c
-        print("init")
 
     def begin(self, baud, theformat=IIC_Serial_8N1):
         """!
