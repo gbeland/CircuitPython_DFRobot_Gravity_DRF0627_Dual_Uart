@@ -15,6 +15,8 @@ Introduction
 
 CircuitPython library for DFROBOT Gravity: I2C to Dual UART Module
 
+Note: this library only uses polled communications so it is important that your project is designed to frequently check for received data. This library is useful for communication with systems with a command/response interaction with the device. The Internal FIFO is 256 bytes long and therefore it should handle many use cases. It is for use in CircuitPython and interrupts are not supported (to my knowledge). It is possible a MicroPython version could support this and this project may be forked to support this (once the author learns more about that enviroment).
+
 .. image:: https://user-images.githubusercontent.com/70548834/187725830-5e979aee-c291-4bbb-9eaa-9b412f353efd.jpg
     :width: 400
     :target: https://www.dfrobot.com/product-2001.html
